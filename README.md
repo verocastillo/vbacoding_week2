@@ -8,4 +8,4 @@ an Excel file was provided to solve the problem, it is included.
 Some skills I mastered during this week are working with cells, ranges,
 formatting, loops, conditionals, and multiple worksheets.
 
-**I am excited and eager to get to learn new languages in the following weeks!**
+**I am excited and eager to get to learn new programming languages in the following weeks!**
