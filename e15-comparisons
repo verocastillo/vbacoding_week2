@@ -1,0 +1,54 @@
+' Cell Comparisons: Credit Cards
+'
+' Instructions: complete both the basic and advanced assignments
+' to find out the different credit cards and respective charges.
+'
+' Test only on e15.xlsm
+
+' Basic solution: display message with each credit card brand
+Sub Basic()
+    ' Dim and give value to variables
+    Dim Column As Integer
+    Column = 1
+    Dim Row As Integer
+    ' Determine last row
+    Row = Cells(Rows.Count, 1).End(xlUp).Row
+    ' Loop to display message box for each credit card
+    For i = 2 To Row
+        If Cells(1 + i, Column).Value <> Cells(i, Column).Value Then
+            MsgBox (Cells(i, 1).Value)
+        End If
+    Next i
+    
+End Sub
+
+' Advanced solution: create a new table and include charges
+Sub Advanced()
+    ' Dim and give value to variables
+    Dim Column As Integer
+    Column = 1
+    Dim Total As Long
+    Total = 0
+    Dim Row As Integer
+    ' Determine last row
+    Row = Cells(Rows.Count, 1).End(xlUp).Row
+    ' Determine row for results
+    Dim ResultRow As Integer
+    ResultRow = 1
+    
+    ' For loop to check the cards and amounts
+    For i = 2 To Row
+        ' Check if value changes between rows
+        If Cells(1 + i, Column).Value = Cells(i, Column).Value Then
+            Total = Total + Cells(i, 3).Value
+        ' Print information in respective cells when value changes
+        Else
+            Total = Total + Cells(i, 3).Value
+            ResultRow = ResultRow + 1
+            Cells(ResultRow, 7) = Cells(i, 1).Value
+            Cells(ResultRow, 8) = Total
+            Total = 0
+        End If
+    Next i
+    
+End Sub
